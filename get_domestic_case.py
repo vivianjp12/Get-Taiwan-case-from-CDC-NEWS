@@ -29,7 +29,7 @@ for page in range(1,1500):
     objTag = objSoup.select('.cbp-item')    #找到.cbp-item這個class
     #print("objTag串列長度 = ", len(objTag))
 
-    if len(objTag) != 0:    #若selecet回傳的串列不為空則繼續循環(因為不知道會有多少分頁，所以與設了1500頁，如果回傳為空就代表沒有那頁，就結束循環)
+    if len(objTag) != 0:    #若selecet回傳的串列不為空則繼續循環(因為不知道會有多少分頁，所以預設了1500頁，如果回傳為空就代表沒有那頁，就結束循環)
         for i in range(len(objTag)):
             covid = objTag[i].find_all('p', {'class':'JQdotdotdot'})    #新聞標題（本日新增xx例本土，xx例境外）
             covid_year = objTag[i].find_all('p',{'class':'icon-year'})  #新聞的年月（2022 - 1）
